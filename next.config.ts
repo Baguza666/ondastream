@@ -1,13 +1,35 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // This tells Next.js to generate a static 'out' folder
-  output: 'export',
-
-  // Hostinger shared hosting doesn't have a Node server to optimize images on the fly.
-  // Since you already optimized your posters as WebP/AVIF, we disable the Next.js image server.
-  images: {
-    unoptimized: true,
+  // Add Security Headers to satisfy Lighthouse Best Practices
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+          {
+            key: "X-Frame-Options",
+            value: "DENY",
+          },
+          {
+            key: "X-XSS-Protection",
+            value: "1; mode=block",
+          },
+          {
+            key: "Referrer-Policy",
+            value: "strict-origin-when-cross-origin",
+          },
+          {
+            key: "Cross-Origin-Opener-Policy",
+            value: "same-origin",
+          }
+        ],
+      },
+    ];
   },
 };
 

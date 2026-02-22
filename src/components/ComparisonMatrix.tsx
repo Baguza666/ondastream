@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
-import { trackWhatsAppClick } from "@/lib/analytics"; // Added tracking import
+import { trackWhatsAppClick } from "@/lib/analytics";
 import { motion } from "framer-motion";
 
 interface ComparisonRow {
@@ -12,7 +12,7 @@ interface ComparisonRow {
     painPoint?: boolean;
 }
 
-const WHATSAPP_NUMBER = "34600000000";
+const WHATSAPP_NUMBER = "34600000000"; // REPLACE with your actual number
 
 const rows: ComparisonRow[] = [
     {
@@ -59,6 +59,7 @@ export default function ComparisonMatrix() {
             className="py-24 px-6 bg-[#0A0A0A] overflow-hidden"
         >
             <div className="max-w-4xl mx-auto">
+                {/* ─── Header ─── */}
                 <div className="text-center mb-14">
                     <p className="text-xs font-black uppercase tracking-[0.3em] text-[#25D366] mb-4">
                         La Verdad Incómoda
@@ -71,6 +72,7 @@ export default function ComparisonMatrix() {
                     </h2>
                 </div>
 
+                {/* ─── Table ─── */}
                 <div
                     role="table"
                     aria-label="Comparación entre TV Tradicional y OndaStream"
@@ -82,9 +84,10 @@ export default function ComparisonMatrix() {
                     >
                         <div role="columnheader" className="text-xs text-transparent" aria-hidden="true" />
 
+                        {/* ACCESSIBILITY FIX: Removed opacity-40 for sufficient contrast */}
                         <div
                             role="columnheader"
-                            className="rounded-2xl bg-white/5 border border-white/10 py-5 px-3 opacity-40 grayscale"
+                            className="rounded-2xl bg-white/5 border border-white/10 py-5 px-3 grayscale"
                         >
                             <span className="text-3xl mb-2 block">📺</span>
                             <p className="text-[10px] md:text-xs font-black text-[#A3A3A3] uppercase tracking-wider leading-tight">
@@ -141,6 +144,7 @@ export default function ComparisonMatrix() {
                     ))}
                 </div>
 
+                {/* ─── Bottom CTA ─── */}
                 <div className="mt-16 text-center">
                     <div className="inline-block relative">
                         <p className="text-[#A3A3A3] text-sm mb-8">
@@ -152,7 +156,7 @@ export default function ComparisonMatrix() {
 
                     <a
                         href={generateWhatsAppLink(WHATSAPP_NUMBER, "Comparación de Ahorro", 0)}
-                        onClick={() => trackWhatsAppClick("Comparison Matrix CTA")} // Added GA4 trigger
+                        onClick={() => trackWhatsAppClick("Comparison Matrix CTA")}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group relative inline-flex items-center gap-3 bg-[#25D366] text-black font-black text-sm md:text-base uppercase tracking-wider px-10 py-5 rounded-2xl hover:bg-[#1EBE5D] active:scale-95 transition-all shadow-[0_20px_50px_rgba(37,211,102,0.3)] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-4 focus:ring-offset-black"
@@ -161,7 +165,8 @@ export default function ComparisonMatrix() {
                         <span>¡Quiero empezar a ahorrar ahora!</span>
                     </a>
 
-                    <p className="mt-4 text-[10px] text-[#A3A3A3] uppercase tracking-widest opacity-50">
+                    {/* ACCESSIBILITY FIX: Removed opacity-50 for sufficient contrast */}
+                    <p className="mt-4 text-[10px] text-[#A3A3A3] uppercase tracking-widest">
                         Activación instantánea • Sin permanencia
                     </p>
                 </div>
