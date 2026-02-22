@@ -1,160 +1,133 @@
-"use client"; // Added: required for onClick event handlers in Next.js App Router
+"use client";
 
-import Image from "next/image";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
-import { trackWhatsAppClick } from "@/lib/analytics"; // Added tracking import
-import sellers from "@/data/sellers.json";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
-interface SellerPlan {
-    id: string;
-    title: string;
-    price: number;
-    currency: string;
-    duration: string;
-    isBestOffer: boolean;
-    badgeText?: string;
-    features: string[];
-    ctaText: string;
-    sellerPhone: string;
-}
+// REPLACE with your actual WhatsApp business number
+const WHATSAPP_NUMBER = "34600000000";
 
-const plans = sellers as SellerPlan[];
+const planes = [
+    {
+        id: "prueba",
+        name: "Prueba",
+        price: "GRATIS",
+        duration: "2 Horas",
+        features: [
+            "Acceso completo al catálogo",
+            "Calidad 4K sin cortes",
+            "Soporte técnico 24/7"
+        ],
+        cta: "Pedir Prueba",
+        message: "Quiero mi Prueba Gratis de 2H",
+        highlight: false
+    },
+    {
+        id: "trimestral",
+        name: "Trimestral",
+        price: "30€",
+        duration: "3 Meses",
+        features: [
+            "Sale a 10€ / mes",
+            "Todos los canales en vivo",
+            "Cine y Series actualizados",
+            "Fútbol y Motor en Directo"
+        ],
+        cta: "Comprar Trimestral",
+        message: "Quiero el plan Trimestral de 30€",
+        highlight: false
+    },
+    {
+        id: "anual",
+        name: "Anual",
+        price: "60€",
+        duration: "12 Meses",
+        features: [
+            "Sale a solo 5€ / mes",
+            "Ahorro máximo garantizado",
+            "Todos los canales en vivo",
+            "Cine, Series y Deportes"
+        ],
+        cta: "Comprar Anual",
+        message: "Quiero el plan Anual de 60€",
+        highlight: true, // This triggers the green "Most Popular" styling
+        badge: "MÁS POPULAR"
+    }
+];
 
 export default function PricingCards() {
     return (
-        <section
-            id="planes"
-            aria-labelledby="pricing-heading"
-            className="relative py-32 px-6 bg-[#1A1A1A] overflow-hidden"
-        >
-            <div
-                aria-hidden="true"
-                className="absolute top-0 right-0 w-1/2 h-full bg-[#25D366]/5 blur-[120px] rounded-full pointer-events-none"
-            />
-
-            <div className="relative z-10 max-w-7xl mx-auto">
-                <div className="text-center mb-20">
-                    <h2
-                        id="pricing-heading"
-                        className="text-4xl md:text-6xl font-black tracking-tight text-[#F5F5F5] mb-4"
-                    >
+        <section id="planes" className="py-24 px-6 bg-background-dark">
+            <div className="max-w-7xl mx-auto">
+                {/* Header */}
+                <div className="text-center mb-16">
+                    <p className="text-sm font-bold text-primary uppercase tracking-[0.3em] mb-4">
+                        Elige tu plan
+                    </p>
+                    <h2 className="text-3xl md:text-5xl font-black text-white max-w-2xl mx-auto leading-none">
                         PLAZAS LIMITADAS PARA EL DERBI. ÚNETE HOY.
                     </h2>
-                    <p className="text-[#A3A3A3] text-lg">
-                        Activa tu cuenta en menos de 5 minutos vía WhatsApp.
-                    </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-end">
-                    {plans.map((plan) => {
-                        const href = generateWhatsAppLink(
-                            plan.sellerPhone,
-                            plan.title,
-                            plan.price
-                        );
+                {/* Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    {planes.map((plan) => (
+                        <div
+                            key={plan.id}
+                            className={`relative flex flex-col p-8 rounded-3xl transition-transform duration-300 hover:-translate-y-2 ${plan.highlight
+                                    ? "bg-primary text-black shadow-[0_0_40px_rgba(37,211,102,0.3)] scale-105 z-10"
+                                    : "bg-white/5 border border-white/10 text-white"
+                                }`}
+                        >
+                            {/* Badge */}
+                            {plan.badge && (
+                                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-black text-primary border border-primary text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest">
+                                    {plan.badge}
+                                </div>
+                            )}
 
-                        return (
-                            <article
-                                key={plan.id}
-                                className={[
-                                    "relative flex flex-col rounded-3xl p-10 transition-all duration-300",
-                                    plan.isBestOffer
-                                        ? [
-                                            "bg-[#25D366]",
-                                            "border-2 border-[#25D366]",
-                                            "shadow-[0_0_60px_rgba(37,211,102,0.35)]",
-                                            "md:scale-105 md:-translate-y-4",
-                                        ].join(" ")
-                                        : [
-                                            "bg-[#0A0A0A]",
-                                            "border border-white/10",
-                                            "hover:border-white/30",
-                                        ].join(" "),
-                                ].join(" ")}
-                            >
-                                {plan.isBestOffer && plan.badgeText && (
-                                    <div
-                                        aria-label="Plan más popular"
-                                        className="absolute -top-4 left-1/2 -translate-x-1/2 bg-black text-white text-[10px] font-black py-1.5 px-5 rounded-full uppercase tracking-widest whitespace-nowrap"
-                                    >
-                                        {plan.badgeText}
-                                    </div>
-                                )}
-
-                                <p
-                                    className={`text-xs font-black uppercase tracking-widest mb-6 ${plan.isBestOffer ? "text-black/60" : "text-[#A3A3A3]"
-                                        }`}
-                                >
-                                    {plan.title}
-                                </p>
-
-                                <div className="flex items-baseline gap-1 mb-10">
-                                    {plan.price === 0 ? (
-                                        <span
-                                            className={`text-5xl font-black ${plan.isBestOffer ? "text-black" : "text-[#F5F5F5]"
-                                                }`}
-                                        >
-                                            GRATIS
+                            <div className="mb-8">
+                                <h3 className={`text-sm font-black uppercase tracking-widest mb-2 ${plan.highlight ? "text-black/70" : "text-text-secondary"}`}>
+                                    {plan.name}
+                                </h3>
+                                <div className="flex items-baseline gap-2">
+                                    <span className="text-5xl font-black tracking-tighter">
+                                        {plan.price}
+                                    </span>
+                                    {plan.duration && (
+                                        <span className={`text-sm font-bold uppercase tracking-wider ${plan.highlight ? "text-black/70" : "text-text-secondary"}`}>
+                                            / {plan.duration}
                                         </span>
-                                    ) : (
-                                        <>
-                                            <span
-                                                className={`font-black ${plan.isBestOffer
-                                                    ? "text-6xl text-black"
-                                                    : "text-5xl text-[#F5F5F5]"
-                                                    }`}
-                                            >
-                                                {plan.price}
-                                                {plan.currency}
-                                            </span>
-                                            <span
-                                                className={
-                                                    plan.isBestOffer ? "text-black/60" : "text-[#A3A3A3]"
-                                                }
-                                            >
-                                                / {plan.duration}
-                                            </span>
-                                        </>
                                     )}
                                 </div>
+                            </div>
 
-                                <ul className="space-y-3 mb-10 flex-1" role="list">
-                                    {plan.features.map((feature) => (
-                                        <li
-                                            key={feature}
-                                            className={`flex items-start gap-3 text-sm font-medium ${plan.isBestOffer ? "text-black font-black" : "text-[#F5F5F5]"
-                                                }`}
-                                        >
-                                            <span
-                                                aria-hidden="true"
-                                                className={`material-symbols-outlined text-lg shrink-0 mt-0.5 ${plan.isBestOffer ? "text-black" : "text-[#25D366]"
-                                                    }`}
-                                            >
-                                                check_circle
-                                            </span>
+                            <ul className="mb-10 flex-1 space-y-4">
+                                {plan.features.map((feature, i) => (
+                                    <li key={i} className="flex items-center gap-3">
+                                        <span className="material-symbols-outlined text-[18px]">
+                                            check_circle
+                                        </span>
+                                        <span className={`text-sm font-semibold ${plan.highlight ? "text-black/80" : "text-[#A3A3A3]"}`}>
                                             {feature}
-                                        </li>
-                                    ))}
-                                </ul>
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
 
-                                <a
-                                    href={href}
-                                    onClick={() => trackWhatsAppClick("Pricing Cards", plan.title)} // Added GA4 trigger passing the plan name
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className={[
-                                        "mt-auto block w-full text-center py-4 rounded-2xl font-black text-sm uppercase tracking-wider transition-all duration-200",
-                                        "focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 focus:ring-offset-black",
-                                        plan.isBestOffer
-                                            ? "bg-black text-white hover:bg-[#1EBE5D] hover:text-black"
-                                            : "bg-white text-black hover:bg-gray-200 transition-colors",
-                                    ].join(" ")}
-                                >
-                                    {plan.ctaText}
-                                </a>
-                            </article>
-                        );
-                    })}
+                            <a
+                                href={generateWhatsAppLink(WHATSAPP_NUMBER, plan.message, 0)}
+                                onClick={() => trackWhatsAppClick("Pricing Card", plan.name)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`block w-full text-center py-4 rounded-xl font-black text-sm uppercase tracking-widest transition-all ${plan.highlight
+                                        ? "bg-black text-white hover:bg-black/80"
+                                        : "bg-white text-black hover:bg-primary"
+                                    }`}
+                            >
+                                {plan.cta}
+                            </a>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

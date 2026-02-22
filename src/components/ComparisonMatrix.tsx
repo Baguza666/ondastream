@@ -18,7 +18,7 @@ const rows: ComparisonRow[] = [
     {
         label: "Precio mensual",
         villain: "120€ / mes",
-        hero: "Desde 8€ / mes",
+        hero: "Desde 5€ / mes", // UPDATED: Math reflects the new 60€ yearly plan
         painPoint: true,
     },
     {
@@ -149,7 +149,8 @@ export default function ComparisonMatrix() {
                     <div className="inline-block relative">
                         <p className="text-[#A3A3A3] text-sm mb-8">
                             Ahorra más de{" "}
-                            <span className="text-[#25D366] font-black text-xl">1.340€ al año</span>
+                            {/* UPDATED MATH: 120€ * 12 = 1440€. 1440€ - 60€ = 1380€ savings */}
+                            <span className="text-[#25D366] font-black text-xl">1.380€ al año</span>
                             {" "}sin renunciar a nada.
                         </p>
                     </div>

@@ -11,7 +11,7 @@ export const generateWhatsAppLink = (
     price: number
 ): string => {
     // Base WhatsApp API URL
-    const baseUrl = `https://wa.me/${+34610975802}`;
+    const baseUrl = `https://wa.me/${+212638108046}`;
 
     // Localized Spanish message matching the 4P strategy
     let rawMessage = "";
