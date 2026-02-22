@@ -1,0 +1,44 @@
+[
+    {
+        "id": "laliga",
+        "title": "La Liga EA Sports",
+        "category": "Deportes en Directo",
+        "imageSrc": "/images/laliga.webp",
+        "altText": "Cartel de La Liga"
+    },
+    {
+        "id": "champions",
+        "title": "Champions League 4K",
+        "category": "Deportes en Directo",
+        "imageSrc": "/images/champions.webp",
+        "altText": "Cartel de la Champions League"
+    },
+    {
+        "id": "netflix-originals",
+        "title": "Catálogo Completo Netflix",
+        "category": "Series y Cine",
+        "imageSrc": "/images/netflix.webp",
+        "altText": "Series de Netflix"
+    },
+    {
+        "id": "hbo-max",
+        "title": "Estrenos HBO Max",
+        "category": "Series y Cine",
+        "imageSrc": "/images/hbo.webp",
+        "altText": "Películas de HBO Max"
+    },
+    {
+        "id": "f1-motogp",
+        "title": "Fórmula 1 y MotoGP",
+        "category": "Motor",
+        "imageSrc": "/images/motor.webp",
+        "altText": "F1 y MotoGP"
+    },
+    {
+        "id": "disney-plus",
+        "title": "Disney+ y Marvel",
+        "category": "Familiar",
+        "imageSrc": "/images/disney.webp",
+        "altText": "Contenido Disney Plus"
+    }
+]

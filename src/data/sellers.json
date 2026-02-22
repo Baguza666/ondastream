@@ -1,0 +1,51 @@
+[
+    {
+        "id": "prueba-gratis",
+        "title": "Prueba Gratis",
+        "price": 0,
+        "currency": "€",
+        "duration": "2 Horas",
+        "isBestOffer": false,
+        "features": [
+            "Acceso total sin cortes",
+            "Calidad 4K y HD",
+            "Soporte por WhatsApp",
+            "Sin tarjeta de crédito"
+        ],
+        "ctaText": "Pedir Prueba",
+        "sellerPhone": "34600000000"
+    },
+    {
+        "id": "trimestral",
+        "title": "Trimestral",
+        "price": 25,
+        "currency": "€",
+        "duration": "3 Meses",
+        "isBestOffer": true,
+        "badgeText": "Más Popular",
+        "features": [
+            "Ahorra un 15%",
+            "Cero cortes garantizado",
+            "+10,000 canales y VOD",
+            "Activación instantánea 24/7"
+        ],
+        "ctaText": "Obtener Acceso",
+        "sellerPhone": "34600000000"
+    },
+    {
+        "id": "anual",
+        "title": "Anual",
+        "price": 75,
+        "currency": "€",
+        "duration": "12 Meses",
+        "isBestOffer": false,
+        "features": [
+            "Ahorra más de 80€ al año",
+            "2 dispositivos simultáneos",
+            "Actualizaciones de VOD diarias",
+            "Soporte prioritario VIP"
+        ],
+        "ctaText": "Obtener Acceso",
+        "sellerPhone": "34600000000"
+    }
+]

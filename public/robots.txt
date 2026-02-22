@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.ondastream.es/sitemap.xml
