@@ -16,7 +16,7 @@ export default function Navbar() {
                             waves
                         </span>
                     </div>
-                    <h1 className="font-sans text-xl font-black tracking-tighter text-white uppercase italic">
+                    <h1 className="font-sans text-2xl md:text-3xl font-black tracking-tighter text-white uppercase italic [text-shadow:_0_2px_10px_rgb(255_255_255_/_20%)]">
                         OndStream
                     </h1>
                 </Link>

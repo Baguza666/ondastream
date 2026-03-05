@@ -11,7 +11,7 @@ export default function Footer() {
                             waves
                         </span>
                     </div>
-                    <span className="font-black text-xl tracking-tighter uppercase italic text-white">
+                    <span className="font-black text-2xl md:text-3xl tracking-tighter uppercase italic text-white [text-shadow:_0_2px_10px_rgb(255_255_255_/_20%)]">
                         OndStream
                     </span>
                 </div>
