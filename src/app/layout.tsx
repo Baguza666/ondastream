@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     site: "@ondstream_es",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.svg",
     apple: "/apple-touch-icon.png",
   },
 };
