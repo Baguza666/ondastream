@@ -10,14 +10,15 @@ export default function Navbar() {
         <nav className="fixed top-0 z-[100] w-full border-b border-surface-highlight bg-background-dark/80 backdrop-blur-xl">
             <div className="mx-auto flex h-20 max-w-full items-center justify-between px-6 lg:px-12">
                 {/* Logo: Routes back to top/home */}
-                <Link href="/" className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/20 text-primary">
-                        <span className="material-symbols-outlined text-[24px]">
+                {/* Logo: Routes back to top/home */}
+                <Link href="/" className="flex items-center gap-3 group">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#25D366]/10 text-[#25D366] border border-[#25D366]/20 transition-transform group-hover:scale-105">
+                        <span className="material-symbols-outlined text-[28px]">
                             waves
                         </span>
                     </div>
-                    <h1 className="font-sans text-2xl md:text-3xl font-black tracking-tighter text-white uppercase italic [text-shadow:_0_2px_10px_rgb(255_255_255_/_20%)]">
-                        OndStream
+                    <h1 className="font-sans text-2xl md:text-3xl font-black tracking-tighter text-white uppercase [text-shadow:_0_2px_15px_rgb(255_255_255_/_15%)]">
+                        Ondstream
                     </h1>
                 </Link>
 

@@ -5,14 +5,15 @@ export default function Footer() {
         <footer className="bg-background-dark py-20 px-6 border-t border-white/5">
             <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
                 {/* Logo */}
+                {/* Logo */}
                 <div className="flex items-center gap-3">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-primary">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/5 text-[#25D366]">
                         <span className="material-symbols-outlined text-[28px]">
                             waves
                         </span>
                     </div>
-                    <span className="font-black text-2xl md:text-3xl tracking-tighter uppercase italic text-white [text-shadow:_0_2px_10px_rgb(255_255_255_/_20%)]">
-                        OndStream
+                    <span className="font-sans text-2xl font-black tracking-tighter uppercase text-white opacity-90">
+                        Ondstream
                     </span>
                 </div>
 
