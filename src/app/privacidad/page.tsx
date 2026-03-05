@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Política de Privacidad | OndaStream",
-    description: "Conoce cómo protegemos tus datos personales y tu privacidad en OndaStream bajo el marco del RGPD.",
+    title: "Política de Privacidad | OndStream",
+    description: "Conoce cómo protegemos tus datos personales y tu privacidad en OndStream bajo el marco del RGPD.",
 };
 
 export default function PrivacidadPage() {
@@ -21,7 +21,7 @@ export default function PrivacidadPage() {
                     <section>
                         <h2 className="text-[#F5F5F5] font-bold text-xl mb-4">1. Identidad del Responsable</h2>
                         <p>
-                            En cumplimiento con el Reglamento General de Protección de Datos (RGPD) de la Unión Europea, te informamos que OndaStream es el responsable del tratamiento de los datos personales que se recopilen a través de esta plataforma y de nuestros canales de atención al cliente (WhatsApp).
+                            En cumplimiento con el Reglamento General de Protección de Datos (RGPD) de la Unión Europea, te informamos que OndStream es el responsable del tratamiento de los datos personales que se recopilen a través de esta plataforma y de nuestros canales de atención al cliente (WhatsApp).
                         </p>
                     </section>
 
@@ -38,7 +38,7 @@ export default function PrivacidadPage() {
                     <section>
                         <h2 className="text-[#F5F5F5] font-bold text-xl mb-4">3. Seguridad y Retención de Datos</h2>
                         <p>
-                            OndaStream no procesa ni almacena datos bancarios o de tarjetas de crédito en sus servidores. Todas las transacciones se realizan mediante pasarelas externas seguras. Tus datos de contacto se cifran y se conservan únicamente mientras mantengas una suscripción activa con nosotros, o hasta que solicites su eliminación.
+                            OndStream no procesa ni almacena datos bancarios o de tarjetas de crédito en sus servidores. Todas las transacciones se realizan mediante pasarelas externas seguras. Tus datos de contacto se cifran y se conservan únicamente mientras mantengas una suscripción activa con nosotros, o hasta que solicites su eliminación.
                         </p>
                     </section>
 

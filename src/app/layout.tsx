@@ -9,7 +9,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const CANONICAL_URL = "https://www.ondastream.es";
+const CANONICAL_URL = "https://www.ondstream.com";
 const GA_MEASUREMENT_ID = "G-YE3HRQ2KMT"; // FIX: Your verified GA4 ID
 
 export const viewport: Viewport = {
@@ -21,8 +21,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(CANONICAL_URL),
   title: {
-    default: "OndaStream España | El Mejor IPTV Sin Cortes 2026",
-    template: "%s | OndaStream",
+    default: "OndStream España | El Mejor IPTV Sin Cortes 2026",
+    template: "%s | OndStream",
   },
   description:
     "Disfruta de La Liga, Champions en 4K y +10,000 canales. Cero cortes. Activación instantánea por WhatsApp. Pide tu prueba gratis de 2 horas hoy.",
@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     "fútbol 4k españa",
     "iptv estable smart tv",
   ],
-  authors: [{ name: "OndaStream", url: CANONICAL_URL }],
-  creator: "OndaStream",
-  publisher: "OndaStream",
+  authors: [{ name: "OndStream", url: CANONICAL_URL }],
+  creator: "OndStream",
+  publisher: "OndStream",
   alternates: {
     canonical: CANONICAL_URL,
     languages: {
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     url: CANONICAL_URL,
-    siteName: "OndaStream",
-    title: "OndaStream España | El Mejor IPTV Sin Cortes 2026",
+    siteName: "OndStream",
+    title: "OndStream España | El Mejor IPTV Sin Cortes 2026",
     description:
       "Disfruta de La Liga, Champions en 4K y +10,000 canales. Cero cortes. Activación instantánea por WhatsApp. Pide tu prueba gratis de 2 horas hoy.",
     images: [
@@ -67,18 +67,18 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "OndaStream España — El Mejor IPTV Sin Cortes 2026",
+        alt: "OndStream España — El Mejor IPTV Sin Cortes 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "OndaStream España | El Mejor IPTV Sin Cortes 2026",
+    title: "OndStream España | El Mejor IPTV Sin Cortes 2026",
     description:
       "Disfruta de La Liga, Champions en 4K y +10,000 canales. Cero cortes. Activación instantánea por WhatsApp. Pide tu prueba gratis de 2 horas hoy.",
     images: ["/og-image.png"],
-    creator: "@ondastream_es",
-    site: "@ondastream_es",
+    creator: "@ondstream_es",
+    site: "@ondstream_es",
   },
   icons: {
     icon: "/favicon.ico",

@@ -75,7 +75,7 @@ export default function ComparisonMatrix() {
                 {/* ─── Table ─── */}
                 <div
                     role="table"
-                    aria-label="Comparación entre TV Tradicional y OndaStream"
+                    aria-label="Comparación entre TV Tradicional y OndStream"
                     className="relative"
                 >
                     <div
@@ -102,7 +102,7 @@ export default function ComparisonMatrix() {
                             <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#25D366] to-transparent" />
                             <span className="text-3xl mb-2 block">⚡</span>
                             <p className="text-[10px] md:text-xs font-black text-[#25D366] uppercase tracking-wider leading-tight">
-                                OndaStream
+                                OndStream
                             </p>
                         </div>
                     </div>

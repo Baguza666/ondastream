@@ -12,7 +12,7 @@ export default function Footer() {
                         </span>
                     </div>
                     <span className="font-black text-xl tracking-tighter uppercase italic text-white">
-                        OndaStream
+                        OndStream
                     </span>
                 </div>
 
@@ -31,7 +31,7 @@ export default function Footer() {
 
                 {/* Copyright */}
                 <div className="text-[10px] text-text-secondary font-medium">
-                    © 2026 OndaStream España.
+                    © 2026 OndStream España.
                 </div>
             </div>
         </footer>

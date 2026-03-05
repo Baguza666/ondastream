@@ -17,7 +17,7 @@ export default function Navbar() {
                         </span>
                     </div>
                     <h1 className="font-sans text-xl font-black tracking-tighter text-white uppercase italic">
-                        OndaStream
+                        OndStream
                     </h1>
                 </Link>
 

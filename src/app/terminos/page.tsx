@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Términos y Condiciones | OndaStream",
-    description: "Términos y condiciones de uso del servicio de suscripción de OndaStream.",
+    title: "Términos y Condiciones | OndStream",
+    description: "Términos y condiciones de uso del servicio de suscripción de OndStream.",
 };
 
 export default function TerminosPage() {
@@ -21,13 +21,13 @@ export default function TerminosPage() {
                     <section>
                         <h2 className="text-[#F5F5F5] font-bold text-xl mb-4">1. Aceptación del Servicio</h2>
                         <p>
-                            Al contratar y utilizar los servicios de OndaStream (en adelante, "el Servicio"), el usuario acepta los presentes términos en su totalidad. El Servicio consiste en la provisión de acceso a una plataforma agregadora de contenido multimedia digital para streaming a través de internet.
+                            Al contratar y utilizar los servicios de OndStream (en adelante, "el Servicio"), el usuario acepta los presentes términos en su totalidad. El Servicio consiste en la provisión de acceso a una plataforma agregadora de contenido multimedia digital para streaming a través de internet.
                         </p>
                     </section>
 
                     <section>
                         <h2 className="text-[#F5F5F5] font-bold text-xl mb-4">2. Uso Permitido y Restricciones</h2>
-                        <p className="mb-3">El acceso a OndaStream es de carácter estrictamente personal y residencial. Queda terminantemente prohibido:</p>
+                        <p className="mb-3">El acceso a OndStream es de carácter estrictamente personal y residencial. Queda terminantemente prohibido:</p>
                         <ul className="list-disc pl-5 space-y-2">
                             <li>Compartir credenciales de acceso en foros públicos o con terceros fuera del núcleo familiar contratado.</li>
                             <li>La retransmisión pública del contenido en bares, restaurantes, locales comerciales o plataformas de streaming (Twitch, YouTube, etc.).</li>
@@ -39,7 +39,7 @@ export default function TerminosPage() {
                     <section>
                         <h2 className="text-[#F5F5F5] font-bold text-xl mb-4">3. Disponibilidad del Servicio (Uptime)</h2>
                         <p>
-                            OndaStream garantiza una infraestructura de alta calidad con un uptime objetivo del 99.9%. Sin embargo, la calidad final del streaming depende directamente de la conexión a internet del usuario, su proveedor de servicios (ISP) y la capacidad de su dispositivo (Smart TV, móvil, etc.). OndaStream no se hace responsable por cortes derivados de fallos en el hardware del cliente o caídas generales de internet.
+                            OndStream garantiza una infraestructura de alta calidad con un uptime objetivo del 99.9%. Sin embargo, la calidad final del streaming depende directamente de la conexión a internet del usuario, su proveedor de servicios (ISP) y la capacidad de su dispositivo (Smart TV, móvil, etc.). OndStream no se hace responsable por cortes derivados de fallos en el hardware del cliente o caídas generales de internet.
                         </p>
                     </section>
 

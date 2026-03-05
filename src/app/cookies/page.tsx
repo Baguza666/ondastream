@@ -3,8 +3,8 @@ import Footer from "@/components/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Política de Cookies | OndaStream",
-    description: "Información sobre el uso de cookies y tecnologías de seguimiento en OndaStream.",
+    title: "Política de Cookies | OndStream",
+    description: "Información sobre el uso de cookies y tecnologías de seguimiento en OndStream.",
 };
 
 export default function CookiesPage() {

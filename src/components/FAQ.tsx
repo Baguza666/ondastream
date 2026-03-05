@@ -32,7 +32,7 @@ const FAQ_DATA: FAQItem[] = [
     {
         id: "legalidad",
         q: "¿Es seguro y privado?",
-        a: "Operamos bajo estrictos protocolos de privacidad y neutralidad de red. OndaStream utiliza conexiones cifradas para garantizar que tu navegación sea 100% privada y anónima en todo momento.",
+        a: "Operamos bajo estrictos protocolos de privacidad y neutralidad de red. OndStream utiliza conexiones cifradas para garantizar que tu navegación sea 100% privada y anónima en todo momento.",
     },
 ];
 
