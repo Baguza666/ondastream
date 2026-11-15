@@ -13,7 +13,7 @@
             "Sin tarjeta de crédito"
         ],
         "ctaText": "Pedir Prueba",
-        "sellerPhone": "34600000000"
+        "sellerPhone": "+212638108046"
     },
     {
         "id": "trimestral",
@@ -30,7 +30,7 @@
             "Activación instantánea 24/7"
         ],
         "ctaText": "Obtener Acceso",
-        "sellerPhone": "34600000000"
+        "sellerPhone": "+212638108046"
     },
     {
         "id": "anual",
@@ -46,6 +46,6 @@
             "Soporte prioritario VIP"
         ],
         "ctaText": "Obtener Acceso",
-        "sellerPhone": "34600000000"
+        "sellerPhone": "+212638108046"
     }
 ]

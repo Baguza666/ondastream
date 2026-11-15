@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useEffect, useReducer, useRef, useSyncExternalStore } from "react";
 import { AnimatePresence, motion, useReducedMotion, Variants } from "framer-motion";
+
+const emptySubscribe = () => () => {};
 
 /* ─── España-localised Impulse Data ─── */
 const SALES: { name: string; city: string; plan: string }[] = [
@@ -24,7 +26,11 @@ type State =
 
 export default function LiveSalesToast() {
     const shouldReduceMotion = useReducedMotion();
-    const [hasMounted, setHasMounted] = useState(false); // Hydration Guard
+    const hasMounted = useSyncExternalStore(
+        emptySubscribe,
+        () => true,
+        () => false
+    );
     const [state, dispatch] = useReducer(
         (_: State, next: State) => next,
         { visible: false }
@@ -34,8 +40,6 @@ export default function LiveSalesToast() {
     const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     useEffect(() => {
-        setHasMounted(true); // Component is safe to render on client
-
         function showNext() {
             const sale = SALES[Math.floor(Math.random() * SALES.length)];
             dispatch({ visible: true, sale });

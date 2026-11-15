@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 
-const WHATSAPP_NUMBER = "34600000000"; // REPLACE with your actual number
+const WHATSAPP_NUMBER = "+212638108046";
 
 export default function Navbar() {
     return (

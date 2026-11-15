@@ -1,16 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useSyncExternalStore } from "react";
+import { motion } from "framer-motion";
+
+const emptySubscribe = () => () => {};
 
 export default function UrgencyTimer() {
-    const [hasMounted, setHasMounted] = useState(false);
+    const hasMounted = useSyncExternalStore(
+        emptySubscribe,
+        () => true,
+        () => false
+    );
     const [timeLeft, setTimeLeft] = useState(899); // 14:59 minutos
     const [spotsLeft, setSpotsLeft] = useState(12);
 
     useEffect(() => {
-        setHasMounted(true);
-
         // Cronómetro de cuenta regresiva
         const timer = setInterval(() => {
             setTimeLeft((prev) => (prev > 0 ? prev - 1 : 0));

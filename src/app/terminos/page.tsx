@@ -21,7 +21,7 @@ export default function TerminosPage() {
                     <section>
                         <h2 className="text-[#F5F5F5] font-bold text-xl mb-4">1. Aceptación del Servicio</h2>
                         <p>
-                            Al contratar y utilizar los servicios de OndStream (en adelante, "el Servicio"), el usuario acepta los presentes términos en su totalidad. El Servicio consiste en la provisión de acceso a una plataforma agregadora de contenido multimedia digital para streaming a través de internet.
+                            Al contratar y utilizar los servicios de OndStream (en adelante, &quot;el Servicio&quot;), el usuario acepta los presentes términos en su totalidad. El Servicio consiste en la provisión de acceso a una plataforma agregadora de contenido multimedia digital para streaming a través de internet.
                         </p>
                     </section>
 

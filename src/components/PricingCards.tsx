@@ -3,8 +3,7 @@
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 import { trackWhatsAppClick } from "@/lib/analytics";
 
-// REPLACE with your actual WhatsApp business number
-const WHATSAPP_NUMBER = "34600000000";
+const WHATSAPP_NUMBER = "+212638108046";
 
 const planes = [
     {

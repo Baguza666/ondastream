@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 
 // LOCK TOKENS: Primary #25D366, Background #0A0A0A
-const WHATSAPP_NUMBER = "34610975802";
+const WHATSAPP_NUMBER = "+212638108046";
+const emptySubscribe = () => () => {};
 
 interface FAQItem {
     q: string;
@@ -37,12 +38,12 @@ const FAQ_DATA: FAQItem[] = [
 ];
 
 export default function FAQ() {
-    const [hasMounted, setHasMounted] = useState(false);
+    const hasMounted = useSyncExternalStore(
+        emptySubscribe,
+        () => true,
+        () => false
+    );
     const [openIndex, setOpenIndex] = useState<number | null>(0);
-
-    useEffect(() => {
-        setHasMounted(true); // Hydration Guard
-    }, []);
 
     if (!hasMounted) return null;
 

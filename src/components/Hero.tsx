@@ -2,6 +2,8 @@ import Image from "next/image";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 import content from "@/data/content.json";
 
+const WHATSAPP_NUMBER = "+212638108046";
+
 interface ContentItem {
     id: string;
     title: string;
@@ -52,7 +54,7 @@ export default function Hero() {
                                 </h3>
                                 <div className="flex gap-3 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
                                     <a
-                                        href={generateWhatsAppLink("", "Prueba Gratis", 0)}
+                                        href={generateWhatsAppLink(WHATSAPP_NUMBER, "Prueba Gratis", 0)}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="flex-1 bg-primary text-black py-4 rounded-xl font-bold text-xs uppercase tracking-tighter text-center"
@@ -99,7 +101,7 @@ export default function Hero() {
                     {/* ─── Single WhatsApp CTA ─── */}
                     <div className="mt-10">
                         <a
-                            href={generateWhatsAppLink("", "Prueba Gratis", 0)}
+                            href={generateWhatsAppLink(WHATSAPP_NUMBER, "Prueba Gratis", 0)}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center gap-3 bg-[#25D366] text-black font-bold text-lg px-8 py-4 rounded-xl hover:bg-[#1EBE5D] active:scale-95 transition-all shadow-[0_8px_30px_rgba(37,211,102,0.4)]"

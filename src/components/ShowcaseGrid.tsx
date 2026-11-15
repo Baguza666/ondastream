@@ -14,8 +14,7 @@ interface ContentItem {
 }
 
 export default function ShowcaseGrid() {
-    // Replace this with your actual WhatsApp business number (include country code, no +)
-    const WHATSAPP_NUMBER = "34600000000";
+    const WHATSAPP_NUMBER = "+212638108046";
 
     return (
         <section id="catalogo" className="py-12 md:py-24 px-6">

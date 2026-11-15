@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useSyncExternalStore } from "react";
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 import { trackWhatsAppClick } from "@/lib/analytics";
 import { motion } from "framer-motion";
@@ -12,7 +12,8 @@ interface ComparisonRow {
     painPoint?: boolean;
 }
 
-const WHATSAPP_NUMBER = "34600000000"; // REPLACE with your actual number
+const WHATSAPP_NUMBER = "+212638108046";
+const emptySubscribe = () => () => {};
 
 const rows: ComparisonRow[] = [
     {
@@ -44,11 +45,11 @@ const rows: ComparisonRow[] = [
 ];
 
 export default function ComparisonMatrix() {
-    const [hasMounted, setHasMounted] = useState(false);
-
-    useEffect(() => {
-        setHasMounted(true);
-    }, []);
+    const hasMounted = useSyncExternalStore(
+        emptySubscribe,
+        () => true,
+        () => false
+    );
 
     if (!hasMounted) return null;
 
